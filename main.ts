@@ -39,11 +39,16 @@ async function startServer(options?: IServerConfig) {
                 url: options!.registry as string,
             });
 
-            await registryClient.registry({
-                name: require(path.resolve(process.cwd(), 'package.json')).name,
-                ip: addr.address as string,
-                port: addr.port as number,
-            })
+            try {
+                await registryClient.registry({
+                    name: require(path.resolve(process.cwd(), 'package.json')).name,
+                    ip: addr.address as string,
+                    port: addr.port as number,
+                })
+            } catch(err) {
+                console.error(`注册程序失败，系统将自动退出：`, err);
+                process.exit(-1);
+            }
         }
     });
     server.on('error', (err) => {
