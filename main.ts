@@ -70,6 +70,10 @@ main()
 })
 
 const death = require('death');
-death(function() {
-    registryClient.unRegistry();
+death(async () => {
+    try {
+        await registryClient.unRegistry();
+    } finally {
+        process.exit(-1);
+    }
 })
