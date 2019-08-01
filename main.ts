@@ -2,8 +2,12 @@ import express  = require('express');
 import registryClient, {RegistryClient} from 'cloud-registry-client';
 import {scannerDecoration, registerControllerToRouter} from 'ts-express-restful';
 import * as path from 'path';
-
+import * as bodyParser from 'body-parser';
 const app = express();
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded());
+app.use(bodyParser.raw());
 const router = express.Router();
 
 scannerDecoration(path.resolve(__dirname, 'server'), [/\.js$/, /\.js\.map$/, /\.\d.ts$/]);
