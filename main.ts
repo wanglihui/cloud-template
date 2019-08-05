@@ -1,3 +1,4 @@
+import C from 'cloud-conf';
 import express  = require('express');
 import registryClient, {RegistryClient} from 'cloud-registry-client';
 import {scannerDecoration, registerControllerToRouter} from 'ts-express-restful';
@@ -18,6 +19,7 @@ app.use('/api/v1', router);
 import * as http from 'http';
 import * as net from 'net';
 async function main() {
+    await C.ready();
     await startServer({
         registry: "http://localhost:5000/api/v1/app"
     });

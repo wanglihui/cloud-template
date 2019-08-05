@@ -4,6 +4,8 @@
   "description": "cloud project template",
   "main": "dist/main.js",
   "dependencies": {
+    "cloud-conf": "0.0.2",
+    "cloud-error": "0.0.1",
     "cloud-registry-client": "0.0.9",
     "death": "^1.1.0",
     "express": "^4.17.1",
@@ -27,5 +29,6 @@
     "template"
   ],
   "author": "wanglihui.sjz@gmail.com",
-  "license": "ISC"
+  "license": "ISC",
+  "private": true
 }
