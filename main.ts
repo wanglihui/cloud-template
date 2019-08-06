@@ -21,7 +21,7 @@ import * as net from 'net';
 async function main() {
     await C.ready();
     await startServer({
-        registry: "http://localhost:5000/api/v1/app"
+        registry: C.registry && C.registry.url
     });
 }
 
