@@ -1,5 +1,4 @@
 name: cloud-template
 env: public
 port: 0
-registry:
-  url: http://localhost:5000/api/v1/app
+registry: false
