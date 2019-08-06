@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded());
 // app.use(bodyParser.raw());
 const router = express.Router();
 
-scannerDecoration(path.resolve(__dirname, 'server'), [/\.js$/, /\.js\.map$/, /\.d.ts$/]);
+scannerDecoration(path.resolve(__dirname, 'server'), [/\.js\.map$/, /\.d.ts$/]);
 registerControllerToRouter(router);
 
 app.use('/api/v1', router);
