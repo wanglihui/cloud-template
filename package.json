@@ -9,7 +9,7 @@
     "cloud-registry-client": "0.0.9",
     "death": "^1.1.0",
     "express": "^4.17.1",
-    "ts-express-restful": "^6.0.3",
+    "ts-express-restful": "^6.0.4",
     "ts-node": "^8.3.0"
   },
   "devDependencies": {
